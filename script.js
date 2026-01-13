@@ -44,3 +44,20 @@ document.querySelectorAll('.campaign-card, .case-study-card').forEach(card => {
     card.style.transition = 'opacity 0.6s, transform 0.6s';
     observer.observe(card);
 });
+
+// Mobile menu toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (navToggle) {
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+        });
+    });
+}
